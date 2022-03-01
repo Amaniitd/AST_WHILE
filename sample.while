@@ -1,0 +1,13 @@
+program hello::
+    var x : int;
+    var y : bool;
+    {
+        read x;
+        write 2;
+        if y then{
+            write 3;
+        } else {
+            write 4;
+        }
+        endif;
+    }
