@@ -1,69 +1,85 @@
-#  Abstract Syntax Trees (AST) for WHILE
+# Abstract Syntax Trees (AST) for WHILE
+
 EBNF for WHILE programming language :https://gist.github.com/Amaniitd/357b62fb419c011f5c7e92c6a3e02f7e
 (given by Prof. SAK)
 
 ## Context-free grammar
+
 The grammar G = <N, T, P, Program> where,
 
-      N = {Program, Block, DeclarationSeq, Declaration, Type, VariableList,
-      CommandSeq, Command, Expression, IntExpression, IntTerm, IntFactor, 
-      BoolExpression, BoolTerm, BoolFactor, Comparison, variable, RelOp, 
+      N = {Program, Block, DeclarationSeq, Declaration, IntDecl, BoolDecl,
+      IntVariableList, BoolVariableList, IntVariable, BoolVariable,
+      CommandSeq, Command, IntExpression, IntTerm, IntFactor,
+      BoolExpression, BoolTerm, BoolFactor, Comparison, RelOp,
       AddOp, MultOp, Identifier, Numeral}
 
-T = {}
+      T = {"program", "::", "var", ":", "int", "bool", ",", "{", "}", ":=",
+      "read", "write", "if", "then", "else", "endif, "while", "do", "endwh",
+      "(", ")", "&&", "||", "tt", "ff", "!", ">", "<", ">=", "<=", "=", "<>",
+      "+", "-", "*", "/", "%", [a-zA-Z], [0-9]}
 
 P consists of the following productions rules:
 
-      Program -> “program” Identifier “::”Block .
+      Program -> "program" Identifier "::"Block .
 
       Block -> DeclarationSeq CommandSeq .
 
       DeclarationSeq -> {Declaration} .
 
-      Declaration -> “var” VariableList“:”Type“;” .
-      Type -> “int” | “bool” .
+      Declaration -> IntDecl | BoolDecl.
 
-      VariableList -> Variable{“,” Variable} .
+      IntDecl -> "var" IntVariableList ":" "int" .
 
-      CommandSeq -> “{”{Command“;”}“}” .
-      Command -> Variable“:=”Expression |
-                  “read” Variable |
-                  “write” IntExpression |
-                  “if” BoolExpression “then” CommandSeq
-                  “else” CommandSeq
-                  “endif” |
-                  “while” BoolExpression “do” CommandSeq
-                  “endwh” .
+      BoolDecl -> "var" BoolVariableList ":" "bool" .
 
-      Expression -> IntExpression | BoolExpression .
+      IntVariableList -> IntVariable {"," IntVariable} .
+
+      BoolVariableList -> BoolVariable {"," BoolVariable} .
+
+
+      CommandSeq -> "{"{Command";"}"}" .
+
+      Command -> IntVariable":="IntExpression |
+                  BoolVariable":="BoolExpression |
+                  "read" IntVariable |
+                  "read" BoolVariable |
+                  "write" IntExpression |
+                  "if" BoolExpression "then" CommandSeq
+                  "else" CommandSeq
+                  "endif" |
+                  "while" BoolExpression "do" CommandSeq
+                  "endwh" .
 
       IntExpression -> IntExpression AddOp IntTerm | IntTerm .
 
       IntTerm -> IntTerm MultOp IntFactor | IntFactor .
 
-      IntFactor -> Numeral | Variable |
-                  “(”IntExpression“)” | “˜”IntFactor .
+      IntFactor -> Numeral | IntVariable |
+                  "("IntExpression")" .
 
-      BoolExpression -> BoolExpression “||” BoolTerm | BoolTerm .
+      BoolExpression -> BoolExpression "||" BoolTerm | BoolTerm .
 
-      BoolTerm -> BoolTerm “&&” BoolFactor | BoolFactor .
+      BoolTerm -> BoolTerm "&&" BoolFactor | BoolFactor .
 
-      BoolFactor -> “tt” | “ff” | Variable | Comparison |
-                  “(”BoolExpression“)” | “!”BoolFactor .
+      BoolFactor -> "tt" | "ff" | BoolVariable | Comparison |
+                  "("BoolExpression")" | "!"BoolFactor .
 
-      Comparison -> IntExpression RelOp IntExpression .
+      Comparison -> IntExpression RelOp IntExpression |
+                  BoolExpression RelOp BoolExpression .
 
-      Variable -> Identifier .
+      IntVariable -> Identifier .
 
-      RelOp -> “<” | “<=” | “=” | “>” | “>=” | “<>” .
+      BoolVariable -> Identifier .
 
-      AddOp -> “+” | “−” .
+      RelOp -> "<" | "<=" | "=" | ">" | ">=" | "<>" .
 
-      MultOp -> “∗” | “/” | “%” .
+      AddOp -> "+" | "-" .
+
+      MultOp -> "*" | "/" | "%" .
 
       Identifier -> Letter{Letter | Digit} .
 
-      Numeral -> [“+” | “˜”]Digit{Digit} .
+      Numeral -> ["+" | "~"]Digit{Digit} .
 
 ## AST datatype defination
 
