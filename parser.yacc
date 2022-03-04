@@ -14,23 +14,21 @@
 
 
 
-%start START
+%start program
 %verbose
 
 %%
-
-START : program
 
 program : PROGRAM ID DCOLON DeclSeq LCURLY CmdSeq RCURLY (Ast.Program(DeclSeq, CmdSeq))
 
 DeclSeq : Decl DeclSeq (Ast.DeclSeq(Decl, DeclSeq))
     | Decl (Ast.DeclSeq(Decl, Ast.EOF()))
 
-Decl : IntDecl 
-    | BoolDecl 
+Decl : IntDecl (IntDecl)
+    | BoolDecl (BoolDecl)
 
-IntDecl : VAR IntVariableList ASSIGN TINT 
-BoolDecl : VAR BoolVariableList ASSIGN TBOOL 
+IntDecl : VAR IntVariableList ASSIGN TINT  (IntVariableList)
+BoolDecl : VAR BoolVariableList ASSIGN TBOOL (BoolVariableList)
 
 IntVariableList : IntVariable COMMA IntVariableList (Ast.VariableList(IntVariableList, IntVariable))
     | IntVariable (Ast.VariableList(IntVariable, Ast.EOF()))
@@ -52,24 +50,24 @@ IntExp : IntExp AddOp IntTerm (Ast.IntOpExp(AddOp, IntExp, IntTerm))
     | IntTerm 
 
 IntTerm : IntTerm MultOp IntFactor (Ast.IntOpExp(MultOp, IntTerm, IntFactor))
-    | IntFactor
+    | IntFactor (IntFactor)
 
-IntFactor : LPAREN IntExp RPAREN 
+IntFactor : LPAREN IntExp RPAREN (IntExp)
     | IntVariable (Ast.IntVarExp(IntVariable))
     | Numeral (Ast.IntConstExp(Numeral))
 
 BoolExp :BoolExp OR BoolTerm (Ast.BoolOpExp(OR, BoolExp, BoolTerm))
-    | BoolTerm
+    | BoolTerm (BoolTerm)
 
 BoolTerm : BoolTerm AND BoolFactor (Ast.BoolOpExp(AND, BoolTerm, BoolFactor))
-    | BoolFactor
+    | BoolFactor (BoolFactor)
 
 BoolFactor : TRUE (Ast.BoolConstExp(TRUE))
     | FALSE (Ast.BoolConstExp(FALSE))
     | LPAREN BoolExp RPAREN 
     | BoolVariable (Ast.BoolVarExp(BoolVariable))
-    | Comparision 
-    | NOT BoolFactor 
+    | Comparision (Comparision)
+    | NOT BoolFactor (Ast.BoolNotExp(NOT, BoolFactor))
 
 Comparision : IntExp RelOp IntExp (Ast.BoolCompExp(RelOp, IntExp1, IntExp2))
     | BoolExp RelOp BoolExp (Ast.BoolCompExp(RelOp, BoolExp1, BoolExp2))
