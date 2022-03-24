@@ -36,9 +36,9 @@ val s = [
 \\000"
 ),
  (1, 
-"\003\003\003\003\003\003\003\003\003\033\035\003\003\003\003\003\
+"\003\003\003\003\003\003\003\003\003\034\036\003\003\003\003\003\
 \\003\003\003\003\003\003\003\003\003\003\003\003\003\003\003\003\
-\\033\032\003\003\003\031\029\003\028\027\026\025\003\024\003\023\
+\\034\033\003\003\003\032\030\003\029\028\027\026\025\024\003\023\
 \\021\021\021\021\021\021\021\021\021\021\018\017\014\013\011\003\
 \\003\008\008\008\008\008\008\008\008\008\008\008\008\008\008\008\
 \\008\008\008\008\008\008\008\008\008\008\008\003\003\003\003\003\
@@ -123,10 +123,10 @@ val s = [
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
 \\000"
 ),
- (29, 
+ (30, 
 "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
-\\000\000\000\000\000\000\030\000\000\000\000\000\000\000\000\000\
+\\000\000\000\000\000\000\031\000\000\000\000\000\000\000\000\000\
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
@@ -134,10 +134,10 @@ val s = [
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
 \\000"
 ),
- (33, 
-"\000\000\000\000\000\000\000\000\000\034\000\000\000\000\000\000\
+ (34, 
+"\000\000\000\000\000\000\000\000\000\035\000\000\000\000\000\000\
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
-\\034\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
+\\035\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
 \\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
@@ -156,38 +156,39 @@ in Vector.fromList(List.map g
 [{fin = [], trans = 0},
 {fin = [], trans = 1},
 {fin = [], trans = 1},
-{fin = [(N 65)], trans = 0},
-{fin = [(N 14),(N 65)], trans = 0},
-{fin = [(N 65)], trans = 5},
-{fin = [(N 51)], trans = 0},
-{fin = [(N 12),(N 65)], trans = 0},
-{fin = [(N 59),(N 63),(N 65)], trans = 8},
-{fin = [(N 59),(N 63)], trans = 8},
-{fin = [(N 63)], trans = 10},
-{fin = [(N 26),(N 65)], trans = 11},
-{fin = [(N 32)], trans = 0},
-{fin = [(N 22),(N 65)], trans = 0},
-{fin = [(N 24),(N 65)], trans = 14},
-{fin = [(N 35)], trans = 0},
-{fin = [(N 29)], trans = 0},
-{fin = [(N 6),(N 65)], trans = 0},
-{fin = [(N 65)], trans = 18},
-{fin = [(N 20)], trans = 0},
-{fin = [(N 17)], trans = 0},
-{fin = [(N 56),(N 65)], trans = 21},
-{fin = [(N 56)], trans = 21},
-{fin = [(N 43),(N 65)], trans = 0},
-{fin = [(N 39),(N 65)], trans = 0},
-{fin = [(N 37),(N 65)], trans = 0},
-{fin = [(N 41),(N 65)], trans = 0},
-{fin = [(N 10),(N 65)], trans = 0},
-{fin = [(N 8),(N 65)], trans = 0},
-{fin = [(N 65)], trans = 29},
-{fin = [(N 48)], trans = 0},
-{fin = [(N 45),(N 65)], trans = 0},
-{fin = [(N 53),(N 65)], trans = 0},
-{fin = [(N 4),(N 65)], trans = 33},
-{fin = [(N 4)], trans = 33},
+{fin = [(N 67)], trans = 0},
+{fin = [(N 14),(N 67)], trans = 0},
+{fin = [(N 67)], trans = 5},
+{fin = [(N 53)], trans = 0},
+{fin = [(N 12),(N 67)], trans = 0},
+{fin = [(N 61),(N 65),(N 67)], trans = 8},
+{fin = [(N 61),(N 65)], trans = 8},
+{fin = [(N 65)], trans = 10},
+{fin = [(N 28),(N 67)], trans = 11},
+{fin = [(N 34)], trans = 0},
+{fin = [(N 24),(N 67)], trans = 0},
+{fin = [(N 26),(N 67)], trans = 14},
+{fin = [(N 37)], trans = 0},
+{fin = [(N 31)], trans = 0},
+{fin = [(N 6),(N 67)], trans = 0},
+{fin = [(N 67)], trans = 18},
+{fin = [(N 22)], trans = 0},
+{fin = [(N 19)], trans = 0},
+{fin = [(N 58),(N 67)], trans = 21},
+{fin = [(N 58)], trans = 21},
+{fin = [(N 45),(N 67)], trans = 0},
+{fin = [(N 41),(N 67)], trans = 0},
+{fin = [(N 16),(N 67)], trans = 0},
+{fin = [(N 39),(N 67)], trans = 0},
+{fin = [(N 43),(N 67)], trans = 0},
+{fin = [(N 10),(N 67)], trans = 0},
+{fin = [(N 8),(N 67)], trans = 0},
+{fin = [(N 67)], trans = 30},
+{fin = [(N 50)], trans = 0},
+{fin = [(N 47),(N 67)], trans = 0},
+{fin = [(N 55),(N 67)], trans = 0},
+{fin = [(N 4),(N 67)], trans = 34},
+{fin = [(N 4)], trans = 34},
 {fin = [(N 1)], trans = 0}])
 end
 structure StartStates =
@@ -234,25 +235,27 @@ let fun continue() = lex() in
 | 10 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.RPAREN(yytext,!linenum,!column) end
 | 12 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.LCURLY(yytext,!linenum,!column) end
 | 14 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.RCURLY(yytext,!linenum,!column) end
-| 17 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.DCOLON(yytext,!linenum,!column) end
-| 20 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.ASSIGN(yytext,!linenum,!column) end
-| 22 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.EQ(yytext,!linenum,!column) end
-| 24 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.LESSTHAN(yytext,!linenum,!column) end
-| 26 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.GREATERTHAN(yytext,!linenum,!column) end
-| 29 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.LESSTHANEQ(yytext,!linenum,!column) end
-| 32 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.GREATERTHANEQ(yytext,!linenum,!column) end
-| 35 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.NOTEQ(yytext,!linenum,!column) end
-| 37 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.PLUS(yytext,!linenum,!column) end
-| 39 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.MINUS(yytext,!linenum,!column) end
+| 16 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.COMMA(yytext,!linenum,!column) end
+| 19 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.DCOLON(yytext,!linenum,!column) end
+| 22 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.ASSIGN(yytext,!linenum,!column) end
+| 24 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.EQ(yytext,!linenum,!column) end
+| 26 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.LESSTHAN(yytext,!linenum,!column) end
+| 28 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.GREATERTHAN(yytext,!linenum,!column) end
+| 31 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.LESSTHANEQ(yytext,!linenum,!column) end
+| 34 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.GREATERTHANEQ(yytext,!linenum,!column) end
+| 37 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.NOTEQ(yytext,!linenum,!column) end
+| 39 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.PLUS(yytext,!linenum,!column) end
 | 4 => let val yytext=yymktext() in column := !column + size(yytext); lex() end
-| 41 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.TIMES(yytext,!linenum,!column) end
-| 43 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.DIV(yytext,!linenum,!column) end
-| 45 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.MOD(yytext,!linenum,!column) end
-| 48 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.AND(yytext,!linenum,!column) end
-| 51 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.OR(yytext,!linenum,!column) end
-| 53 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.NOT(yytext,!linenum,!column) end
-| 56 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.INT(List.foldl (fn (a,r) => ord(a) - ord(#"0") + 10*r) 0 (explode yytext),!linenum,!column) end
-| 59 => let val yytext=yymktext() in column := !column + size(yytext);(
+| 41 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.MINUS(yytext,!linenum,!column) end
+| 43 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.TIMES(yytext,!linenum,!column) end
+| 45 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.DIV(yytext,!linenum,!column) end
+| 47 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.MOD(yytext,!linenum,!column) end
+| 50 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.AND(yytext,!linenum,!column) end
+| 53 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.OR(yytext,!linenum,!column) end
+| 55 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.NOT(yytext,!linenum,!column) end
+| 58 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.INT(List.foldl (fn (a,r) => ord(a) - ord(#"0") + 10*r) 0 (explode yytext),!linenum,!column) end
+| 6 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.TERM(yytext,!linenum,!column) end
+| 61 => let val yytext=yymktext() in column := !column + size(yytext);(
 if yytext="tt" then Tokens.BOOL(true,!linenum,!column)
 else if yytext="ff" then Tokens.BOOL(false,!linenum,!column)
 else if yytext="if" then Tokens.IF(yytext,!linenum,!column)
@@ -271,9 +274,8 @@ else if yytext="bool" then Tokens.TBOOL(yytext,!linenum,!column)
 
 else Tokens.ID(yytext,!linenum,!column)
 ) end
-| 6 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.TERM(yytext,!linenum,!column) end
-| 63 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.ID(yytext,!linenum,!column) end
-| 65 => (lex())
+| 65 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.ID(yytext,!linenum,!column) end
+| 67 => (lex())
 | 8 => let val yytext=yymktext() in column := !column + size(yytext); Tokens.LPAREN(yytext,!linenum,!column) end
 | _ => raise Internal.LexerError
 

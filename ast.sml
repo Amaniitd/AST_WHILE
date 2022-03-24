@@ -1,6 +1,10 @@
 structure Ast =
 struct
 
+type ID = string
+
+type EOF = unit
+
 datatype RelOp = LT | LEQ | EQ | NEQ | GEQ | GT
 
 datatype IntOp = PLUS | MINUS | TIMES | DIV | MOD

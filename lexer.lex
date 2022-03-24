@@ -27,7 +27,7 @@ vchar = [0-9A-Za-z];
 ")" => (column := !column + size(yytext); Tokens.RPAREN(yytext,!linenum,!column));
 "{" => (column := !column + size(yytext); Tokens.LCURLY(yytext,!linenum,!column));
 "}" => (column := !column + size(yytext); Tokens.RCURLY(yytext,!linenum,!column));
-
+"," => (column := !column + size(yytext); Tokens.COMMA(yytext,!linenum,!column));
 
 
 "::" => (column := !column + size(yytext); Tokens.DCOLON(yytext,!linenum,!column));
