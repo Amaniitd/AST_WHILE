@@ -50,5 +50,7 @@ struct
     fun all f st = (all f st);
     fun list2stack(l) = l;
     fun stack2list(st) = st; 
+end
 
- end
+
+
